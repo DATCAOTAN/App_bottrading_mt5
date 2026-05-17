@@ -1,0 +1,34 @@
+version: 1
+disable_existing_loggers: false
+
+formatters:
+  standard:
+    format: '[%(asctime)s] %(levelname)s - %(name)s - %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+  detailed:
+    format: '[%(asctime)s] %(levelname)s - %(name)s - %(filename)s:%(lineno)d - %(funcName)s() - %(message)s'
+    datefmt: '%Y-%m-%d %H:%M:%S'
+
+handlers:
+  file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: logs/live_trade_ai.log
+    mode: a
+    encoding: utf8
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: standard
+    stream: ext://sys.stdout
+
+loggers:
+  live_trade_ai:
+    level: DEBUG
+    handlers: [file, console]
+    propagate: false
+
+root:
+  level: WARNING
+  handlers: [console]

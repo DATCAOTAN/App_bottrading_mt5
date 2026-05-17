@@ -1,0 +1,53 @@
+version: 1
+disable_existing_loggers: False
+
+root:
+  level: DEBUG
+  handlers: [console]
+
+loggers:
+  training:
+    level: DEBUG
+    handlers: [training_file]
+    propagate: False
+
+  live_trade:
+    level: DEBUG
+    handlers: [live_trade_file]
+    propagate: False
+
+  hyperparameter:
+    level: DEBUG
+    handlers: [hyperparameter_file]
+    propagate: False
+
+handlers:
+  console:
+    class: logging.StreamHandler
+    level: INFO
+    formatter: simple
+    stream: ext://sys.stdout
+
+  training_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: 'results/logs/training.log'
+
+  live_trade_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: 'results/logs/live_trade.log'
+
+  hyperparameter_file:
+    class: logging.FileHandler
+    level: DEBUG
+    formatter: detailed
+    filename: 'results/logs/hyperparameter.log'
+
+formatters:
+  simple:
+    format: '%(levelname)s: %(message)s'
+  detailed:
+    format: '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

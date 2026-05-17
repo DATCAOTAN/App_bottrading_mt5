@@ -1,0 +1,115 @@
+# ========================
+# SECURITY - SENSITIVE FILES
+# ========================
+# API Keys & Secrets
+key_api.txt
+ai_mode.txt
+.env
+.env.local
+.env.*.local
+secrets.txt
+credentials.json
+
+# ========================
+# PYTHON
+# ========================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+.conda/
+
+# ========================
+# TRADING DATA & RESULTS
+# ========================
+# Trade history CSV files (contain personal trading data)
+results/trade_history/real_time/*.csv
+results/backtest/*.csv
+results/*.csv
+
+# Log files
+logs/
+*.log
+
+# ========================
+# AI MODEL FILES (large binaries)
+# ========================
+DDQN_TradingAgent/checkpoints/*.pth
+DDQN_TradingAgent/checkpoints/*.zip
+DDQN_TradingAgent/tensorboard_logs/
+*.pth
+*.pkl
+*.h5
+*.onnx
+*.model
+*.pt
+
+# ========================
+# BUILD / PACKAGING
+# ========================
+build/
+dist/
+*.spec.bak
+__pycache__/
+*.pyc
+
+# ========================
+# IDE & EDITORS
+# ========================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ========================
+# JUPYTER / DATA SCIENCE
+# ========================
+.ipynb_checkpoints/
+*.ipynb
+
+# ========================
+# WINDOWS SPECIFIC
+# ========================
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ========================
+# DATA FILES (potentially large)
+# ========================
+data/*.csv
+data/*.xlsx
+data/*.parquet
+data/*.feather
+
+# Reports
+reports/
